@@ -4,7 +4,7 @@ const app = express();
 const jwt = import('jsonwebtoken');
 import admin from 'firebase-admin';
 import { readFile } from 'fs/promises';
-const serviceAccount = JSON.parse(await readFile('./svcardiac-f6e93-firebase-adminsdk-1wnip-693e0db66b.json', 'utf-8')); // Firebase Admin service account key
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG.service_account); // Firebase Admin service account key
 
 console.log('Service Account:', serviceAccount); // Debug log
 
